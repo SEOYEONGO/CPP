@@ -1,2 +1,2 @@
-# C-
+# C++
 let study c++
