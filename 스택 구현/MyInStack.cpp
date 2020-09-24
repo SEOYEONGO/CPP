@@ -28,12 +28,12 @@ int main (){
 	MyInStack a;
 	for (int i=0;i<11;i++){
 		if (a.push(i)) cout<<i<<' ';
-		else cout<<endl<<i+1<<" ¹øÂ° stack full"<<endl;
+		else cout<<endl<<i+1<<" ë²ˆì§¸ stack full"<<endl;
 	}
 	int n;
 	for (int i=0;i<11;i++){
 		if (a.pop(n)) cout<<n<<' ';
-		else cout<<endl<<i+1<<" ¹øÂ° stack empty"; 
+		else cout<<endl<<i+1<<"  stack empty"; 
 	}
 	cout<<endl;
 }
