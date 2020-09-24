@@ -18,7 +18,7 @@ public:
 		p=new int[size];
 	}
 	
-	MyInStack(MyInStack& s){		// º¹»ç »ý¼ºÀÚ 
+	MyInStack(MyInStack& s){		// ë³µì‚¬ ìƒì„±ìž 
 		this->size=s.size;
 		this->tos=s.tos;
 		this->p = new int[s.size];
@@ -50,15 +50,15 @@ public:
 
 int main (){
 	MyInStack a(10);
-	if (a.push(10)) cout<<"Çª½Ã ¼º°ø"<<endl;
-  	if (a.push(20)) cout<<"Çª½Ã ¼º°ø"<<endl;
-	MyInStack b(a);	// º¹»ç »ý¼º
-	if (b.push(30)) cout<<"Çª½Ã ¼º°ø"<<endl;
+	if (a.push(10)) cout<<"í‘¸ì‹œ ì„±ê³µ"<<endl;
+  	if (a.push(20)) cout<<"í‘¸ì‹œ ì„±ê³µ"<<endl;
+	MyInStack b(a);	// ë³µì‚¬ ìƒì„±			// MyInStack b=a; ë¡œ í•´ë„ ê°™ì€ ê²°ê³¼.
+	if (b.push(30)) cout<<"í‘¸ì‹œ ì„±ê³µ"<<endl;
 	
 	int n;
-	if (a.pop(n)) cout<<"½ºÅÃ a¿¡¼­ ÆËÇÑ °ª "<<n<<endl;
-	else cout<<"ÆË ½ÇÆÐ"<<endl;
+	if (a.pop(n)) cout<<"ìŠ¤íƒ aì—ì„œ íŒí•œ ê°’ "<<n<<endl;
+	else cout<<"íŒ ì‹¤íŒ¨"<<endl;
 	
-	if (b.pop(n)) cout<<"½ºÅÃ b¿¡¼­ ÆËÇÑ °ª "<<n<<endl;  
-	else cout<<"ÆË ½ÇÆÐ"<<endl;
+	if (b.pop(n)) cout<<"ìŠ¤íƒ bì—ì„œ íŒí•œ ê°’ "<<n<<endl;  
+	else cout<<"íŒ ì‹¤íŒ¨"<<endl;
 }
