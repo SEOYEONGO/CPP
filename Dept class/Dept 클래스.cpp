@@ -1,19 +1,21 @@
 #include <iostream>
 using namespace std;
 
+// ê¹Šì€ ë³µì‚¬ ìƒì„±ìë¥¼ ìƒì„±í•˜ê±°ë‚˜, ê°’ì— ì˜í•œ í˜¸ì¶œì´ ì•„ë‹Œ ì°¸ì¡°ì— ì˜í•œ í˜¸ì¶œë¡œ ê°ì²´ë¥¼ ì „ë‹¬í•˜ì
+
 class Dept{
-	int size;		// scores ¹è¿­ÀÇ Å©±â 
-	int *scores;	// µ¿Àû ÇÒ´ç ¹ŞÀ» Á¤¼ö ¹è¿­ÀÇ ÁÖ¼Ò 
+	int size;		// scores ë°°ì—´ì˜ í¬ê¸° 
+	int *scores;	// ë™ì  í• ë‹¹ ë°›ì„ ì •ìˆ˜ ë°°ì—´ì˜ ì£¼ì†Œ 
 public:
 	Dept(int size){
 		this->size=size;
 		scores=new int[size];
 	}
-	Dept (const Dept& dept);	// º¹»ç »ı¼ºÀÚ 
-	~Dept();		// ¼Ò¸êÀÚ 
+	Dept (const Dept& dept);	// ë³µì‚¬ ìƒì„±ì 
+	~Dept();		// ì†Œë©¸ì 
 	int getSize() { return size;}
-	void read();  	// size ¸¸Å­À» Å°º¸µå¿¡¼­ Á¤¼ö¸¦ ÀĞ¾î scores ¹è¿­¿¡ ÀúÀå 
-	bool isOver60(int index); 		// indexÀÇ ÇĞ»ıÀÇ ¼ºÀûÀÌ 60º¸´Ù Å©¸é true¸®ÅÏ 
+	void read();  	// size ë§Œí¼ì„ í‚¤ë³´ë“œì—ì„œ ì •ìˆ˜ë¥¼ ì½ì–´ scores ë°°ì—´ì— ì €ì¥ 
+	bool isOver60(int index); 		// indexì˜ í•™ìƒì˜ ì„±ì ì´ 60ë³´ë‹¤ í¬ë©´ trueë¦¬í„´ 
 }; 
 
 Dept::Dept(const Dept& dept){
@@ -30,7 +32,7 @@ Dept::~Dept(){
 }
 
 void Dept::read(){
-	cout<<size<<"°³ Á¡¼ö ÀÔ·Â >> ";
+	cout<<size<<"ê°œ ì ìˆ˜ ì…ë ¥ >> ";
 	for (int i=0;i<size;i++){
 		cin>>scores[i];
 	}
@@ -41,7 +43,7 @@ bool Dept::isOver60(int index){
 	else return false;
 }
 
-int countPass (Dept& dept){	// dept ÇĞ°ú¿¡ 60Á¡ ÀÌ»óÀ¸·Î Åë°úÇÏ´Â ÇĞ»ıÀÇ ¼ö ¸®ÅÏ 
+int countPass (Dept& dept){	// dept í•™ê³¼ì— 60ì  ì´ìƒìœ¼ë¡œ í†µê³¼í•˜ëŠ” í•™ìƒì˜ ìˆ˜ ë¦¬í„´ 
 	int count=0;
 	for (int i=0;i<dept.getSize();i++){
 		if (dept.isOver60(i)) {
@@ -52,8 +54,8 @@ int countPass (Dept& dept){	// dept ÇĞ°ú¿¡ 60Á¡ ÀÌ»óÀ¸·Î Åë°úÇÏ´Â ÇĞ»ıÀÇ ¼ö ¸®ÅÏ
 }
 
 int main (){
-	Dept com(10);		// ÃÑ 10¸íÀÌ ÀÖ´Â ÇĞ°ú com
-	com.read();			// ÃÑ 10¸íÀÇ ÇĞ»ıµéÀÇ ¼ºÀûÀ» Å°º¸µå·ÎºÎÅÍ ÀĞ¾î scores ¹è¿­¿¡ ÀúÀå
-	int n=countPass(com);		// com ÇĞ°ú¿¡ 60Á¡ ÀÌ»óÀ¸·Î Åë°úÇÑ ÇĞ»ıÀÇ ¼ö¸¦ ¸®ÅÏ 
-	cout<<"60Á¡ ÀÌ»óÀº "<<n<<"¸í";
+	Dept com(10);		// ì´ 10ëª…ì´ ìˆëŠ” í•™ê³¼ com
+	com.read();			// ì´ 10ëª…ì˜ í•™ìƒë“¤ì˜ ì„±ì ì„ í‚¤ë³´ë“œë¡œë¶€í„° ì½ì–´ scores ë°°ì—´ì— ì €ì¥
+	int n=countPass(com);		// com í•™ê³¼ì— 60ì  ì´ìƒìœ¼ë¡œ í†µê³¼í•œ í•™ìƒì˜ ìˆ˜ë¥¼ ë¦¬í„´ 
+	cout<<"60ì  ì´ìƒì€ "<<n<<"ëª…";
 }
